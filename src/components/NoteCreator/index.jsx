@@ -1,21 +1,25 @@
-import './style.css';
 import { useState } from 'react';
+import './style.css';
 
+const NoteCreator = (addNoteAction) => {
+    const [noteText, setNoteText] = useState("");
 
-const NoteCreator = () => {
-    const [count, setCount] = useState(0);
+    const handleAddNote = (event) => {
+        setNoteText(event.target.value);
+    }
 
-    const addNotes = () => {
-        setCount(count+1);
-        console.log(`Количество заметок: ${setCount}`);
-    };
+    const handleAction = () => {
+        addNoteAction(noteText);
+        setNoteText("");
+    }
 
     return (
-        <div className="notecreator-container">
-            <input type="text" />
-            <button onClick={addNotes}>Добавить заметку</button>
-        </div>
-        
+        <div className="note-creator-container">
+            <textarea value={noteText} onChange={handleAddNote}/>
+            <button onClick={handleAction}>
+                Добавить заметку
+            </button>
+        </div>  
     )
 };
 

@@ -1,0 +1,25 @@
+.note-list-container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #6A6B83; 
+    border-radius: 8px;
+}
+
+.note-line {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 12px;
+    background-color: #5F506B; 
+    border: 1px solid #533747; 
+    border-radius: 6px;
+}
+
+.note-line {
+    margin-right: 10px;
+}
+
+.note-line:hover {
+    background-color: #76949F; 
+}
